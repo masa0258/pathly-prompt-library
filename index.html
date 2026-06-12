@@ -71,6 +71,53 @@
     border:1px solid #FDE68A;
     border-radius:8px;
   }
+  /* ---------- 使い方3ステップ ---------- */
+  .howto{
+    max-width:860px;
+    margin:18px auto 0;
+    display:flex;
+    gap:10px;
+    text-align:left;
+  }
+  .howto .step{
+    flex:1;
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    background:var(--bg);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:12px 14px;
+  }
+  .howto .num{
+    flex-shrink:0;
+    width:26px;height:26px;
+    border-radius:50%;
+    background:var(--main);
+    color:#fff;
+    font-size:14px;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-top:2px;
+  }
+  .howto .step-text{
+    font-size:13px;
+    line-height:1.6;
+    color:var(--text);
+  }
+  .howto .step-text b{color:var(--main);}
+  .howto .step-text mark{
+    background:#FEF3C7;
+    color:#92400E;
+    border-radius:3px;
+    padding:0 3px;
+    font-weight:700;
+  }
+  @media (max-width:640px){
+    .howto{flex-direction:column;gap:8px;}
+  }
   .rules summary{
     padding:10px 14px;
     font-weight:700;
@@ -291,6 +338,30 @@
   .empty .face{font-size:40px;}
   .empty p{margin-top:8px;font-size:15px;}
 
+  /* ---------- フッター ---------- */
+  footer{
+    background:var(--card);
+    border-top:1px solid var(--border);
+    padding:28px 16px 32px;
+    text-align:center;
+  }
+  footer .brand{
+    font-size:15px;
+    font-weight:700;
+    color:var(--main);
+    letter-spacing:.04em;
+  }
+  footer .tagline{
+    font-size:13px;
+    color:var(--sub);
+    margin-top:4px;
+  }
+  footer .copyright{
+    font-size:12px;
+    color:#94A3B8;
+    margin-top:12px;
+  }
+
   /* ---------- モーダル共通 ---------- */
   .overlay{
     display:none;
@@ -389,6 +460,20 @@
   <button class="gear" id="gearBtn" title="管理者">&#9881;</button>
   <h1>一発解決 AIプロンプト集</h1>
   <p>探して、コピーして、ChatGPTやClaudeに貼り付けるだけ</p>
+  <div class="howto">
+    <div class="step">
+      <span class="num">1</span>
+      <span class="step-text"><b>探す</b><br>キーワード検索か、業種ボタンで使いたいプロンプトを見つける</span>
+    </div>
+    <div class="step">
+      <span class="num">2</span>
+      <span class="step-text"><b>コピーする</b><br>「この文をコピー」ボタンを押す（全文を見るで中身の確認もできます）</span>
+    </div>
+    <div class="step">
+      <span class="num">3</span>
+      <span class="step-text"><b>貼り付けて書き換える</b><br>ChatGPTやClaudeに貼り付け、<mark>[ ]</mark>の部分を自分の内容に書き換えて送信</span>
+    </div>
+  </div>
   <details class="rules">
     <summary>使い方の共通ルール（3つだけ）</summary>
     <ol>
@@ -418,6 +503,12 @@
 </div>
 
 <main class="list" id="list"></main>
+
+<footer>
+  <div class="brand">Pathly Consult</div>
+  <div class="tagline">現場が自走する組織を、伴走でつくる</div>
+  <div class="copyright">&copy; 2026 Pathly Consult</div>
+</footer>
 
 <!-- 管理者ログインモーダル -->
 <div class="overlay" id="adminOverlay">
